@@ -1,0 +1,44 @@
+//setup
+StoreGDB 1
+FnOff 
+AxesOff
+ClrDraw
+//set friendly window
+1.3->Ymax
+Ans->Xmax // Using Ans like this saves quite a bit of extra space
+~Ans->Ymin
+Ans->Xmin
+ZSquare
+Radian
+"(Ans-A)pi->|u // This is a Sequential Graphing Function
+//draw clock face
+Circle(0,0,1
+//draw tick marks
+For(B,0,2pi,pi/30
+    .925-sum({.075,.05}not(fPart(round(B/pi{6,2 // Thank you lirtosiast!
+    Line(Anscos(B),Anssin(B),cos(B),sin(B
+End
+//draw hour labels
+Text(0,44,12
+Text(28,75,3
+Text(56,46,6
+Text(28,19,9
+//repeats until keypress
+Repeat getKey
+   // Update hands
+   getTime->T
+    For(A,1,0,~1
+        |LT(1
+        Line(0,0,.45sin(|u/6),.5cos(|u/6),not(A
+        |LT(2
+        Line(0,0,.65sin(|u/30),.7cos(|u/30),not(A
+        |LT(3
+        Line(0,0,.7sin(|u/30),.75cos(|u/30),not(A
+    End
+    //draw the date in the corners
+    getDate
+   Text(55,74,Ans(1
+   Text(1,1,Ans(2
+   Text(7,1,Ans(3
+End
+RecallGDB 1
