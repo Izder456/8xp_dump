@@ -1,0 +1,53 @@
+"Setup
+ClrHome
+0->T:0->I
+0->M:0->C:0->E
+0->L:0->P:0->D
+Fix 2
+
+"Splash
+Disp "The Power of Compounding
+Disp "by: Ajzek Mejer
+Pause 
+ClrHome
+
+"Input
+Input "Bal? ",C
+Input "%? ",P
+Input "Yrs? ",L
+Input "Dollar? ",D
+P/365->P
+
+"Calculate
+ClrHome
+Disp "Caculating...
+Disp "
+If D=0
+Then
+ For(T,1,L,1
+  For(I,0,365,1
+   (P+1)*C->C
+  End
+  Disp "Yr:",T
+  Disp "Bal:",C
+  Disp "
+ End
+End
+If D=1
+Then
+ Input "How Many $? ",M
+ For(T,1,L,1
+  For(I,0,365,1
+   C+M->C
+   (P+1)*C->C
+  End
+  Disp "Yr:",T
+  Disp "Bal:",C
+ End
+End
+Pause 
+C->E
+
+"Final
+ClrHome
+Disp "Final Bal:",E
