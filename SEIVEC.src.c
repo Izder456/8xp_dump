@@ -1,5 +1,5 @@
 ////////////////////////////////////////
-// { prgmSEIVEC } { v1.0 }
+// { prgmSEIVEC } { v1.2 }
 // Author: izder456
 // License: n/a
 // Description: generate primes up to n
@@ -60,8 +60,11 @@ int main()
             //printf("%d ",i);
             sprintf(istr, "%d ", i);
             os_PutStrFull(istr);
+            os_NewLine();
         }
     }
+
+    os_PutStrFull("DONE!");
     while (!os_GetCSC());
     return 0;
 }
