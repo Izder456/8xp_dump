@@ -1,0 +1,13 @@
+ClrHome
+Prompt N
+For(I,2,N,1
+ 0->C
+ For(J,1,I,1
+  If (remainder(I,J)=0)
+  C+1->C
+ End
+ If (C=2)
+ Disp I
+End
+Disp "DONE!
+Pause
